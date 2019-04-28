@@ -1,7 +1,6 @@
 package me.nv6.prefixes.util;
 
-import java.util.*;
-import java.util.regex.Pattern;
+import org.bukkit.ChatColor;
 
 public class CC {
     
