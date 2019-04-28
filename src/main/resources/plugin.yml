@@ -1,0 +1,9 @@
+name: Prefixes
+version: SNAPSHOT-1.0.3
+main: me.nv6.prefixes.PrefixPlugin
+description: An easy and simplistic prefix plugin made for the craft.
+commands:
+  prefix:
+    aliases:
+      - prefixes
+      - p
