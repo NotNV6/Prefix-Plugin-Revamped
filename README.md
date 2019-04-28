@@ -15,3 +15,4 @@ The format is supported by any plugin as this plugin uses event#setFormat
 - There might be bugs, if you do find some please report them to me (NV6#9199 on discord)
 - This is an opensource project, I have not put a lot of effort in this plugin.
 - I am not a professional developer by any means, I am not responsible for any issues.  
+- You can NOT claim this code to be yours.
