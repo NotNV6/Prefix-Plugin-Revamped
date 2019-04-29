@@ -23,6 +23,7 @@ event#setFormat
 - This is an opensource project, I have not put a lot of effort in this plugin.
 - I am not a professional developer by any means, I am not responsible for any issues.  
 - You can NOT claim this code to be yours.
+- This plugin does not work out of the box, you must create a folder in your plugins folder called "Prefixes", and inside of that folder you must create a yml file called "config.yml", and in that folder you must put the default config.yml provided in src/resources/config.yml.
 
 # Donate?
 - Feel free to donate for my work if you are happy with my product, as this is an opensource and free project after all. You can donate using my paypal: paypal.me/donatenv6
