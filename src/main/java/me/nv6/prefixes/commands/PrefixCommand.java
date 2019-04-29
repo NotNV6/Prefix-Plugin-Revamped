@@ -13,10 +13,11 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import java.util.Arrays;
+import java.util.*;
 
 
 public class PrefixCommand implements CommandExecutor {
+
 
     @SuppressWarnings("all") // There are no actual warnings, just duplicates.
     @Override

@@ -65,7 +65,7 @@ public class PrefixMenu extends PaginatedMenu implements Listener {
                     }
 
                     profile.setCurrentPrefix(prefix);
-                    player.sendMessage(CC.translate("&aYou have set your prefix to \"" + prefix.getPrefix() + "\""));
+                    player.sendMessage(CC.translate("&aYou have set your prefix to \"" + prefix.getPrefix() + "&a\""));
                     player.closeInventory();
                 }
             });
