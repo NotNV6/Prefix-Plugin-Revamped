@@ -3,12 +3,13 @@ An updated version of my old prefix plugin, saves into MongoDB now.
 
 # API
 You can set the current prefix of a player by using profiles:
-Profile.getPlayer(player).setCurrentPrefix(prefix);
+```dif + Profile.getPlayer(player).setCurrentPrefix(prefix);```
 
 You can add/remove a prefix to/from a player by using profiles:
-Profile.getPlayer(player).getPrefixes().remove/add(prefix);
+```dif + Profile.getPlayer(player).getPrefixes().remove/add(prefix);```
 
-The format is supported by any plugin as this plugin uses event#setFormat
+The format is supported by any plugin as this plugin uses 
+```dif + event#setFormat```
 
 # Notes
 - Only supports MongoDB for now, no flatfile or anything.
