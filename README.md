@@ -23,3 +23,6 @@ event#setFormat
 - This is an opensource project, I have not put a lot of effort in this plugin.
 - I am not a professional developer by any means, I am not responsible for any issues.  
 - You can NOT claim this code to be yours.
+
+# Donate?
+- Feel free to donate for my work if you are happy with my product, as this is an opensource and free project after all. You can donate using my paypal: paypal.me/donatenv6
