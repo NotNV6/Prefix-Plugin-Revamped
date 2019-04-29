@@ -21,9 +21,8 @@ public class Database {
             List<MongoCredential> credentials = new ArrayList<>();
             credentials.add(MongoCredential.createCredential(user, base, password.toCharArray()));
             client = new MongoClient(new ServerAddress(host, port), credentials);
-        } else {
-            client = new MongoClient(new ServerAddress(host, port));
-        }
+        } else client = new MongoClient(new ServerAddress(host, port));
+        
 
         database = client.getDatabase(base);
 
