@@ -17,7 +17,7 @@ public class PlayerListeners implements Listener {
     @EventHandler
     public void onQuit(PlayerQuitEvent event) { Profile.getProfile(event.getPlayer()).destroy(); }
 
-    @EventHandler(priority=EventPriority.LOWEST)
+    @EventHandler(priority=EventPriority.HIGHEST)
     public void onChat(AsyncPlayerChatEvent event) {
         Profile profile = Profile.getProfile(event.getPlayer());
         event.setMessage(event.getMessage().replace("%", "%%")); // if you do not know why I am doing this, if you type % in chat while using event#setFormat, the format will fuck up.

@@ -11,6 +11,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 
@@ -20,7 +21,7 @@ import static com.mongodb.client.model.Filters.eq;
 @Setter
 public class Profile {
 
-    public static List<Profile> profiles = new ArrayList<>();
+    private static List<Profile> profiles = new ArrayList<>();
 
 
     private UUID uuid;
@@ -38,6 +39,7 @@ public class Profile {
 
 
     public static Profile getProfile(Player player) { return profiles.stream().filter(profile ->  profile.getPlayer().equals(player)).findFirst().orElse(null); }
+    public static Collection<Profile> getProfiles() { return profiles; }
 
     public void load() {
         profiles.add(this);
@@ -55,7 +57,7 @@ public class Profile {
     }
 
 
-    private void save() {
+    public void save() {
         Document document = new Document();
 
         document.put("uuid", player.getUniqueId().toString());

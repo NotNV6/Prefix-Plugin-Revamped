@@ -60,7 +60,7 @@ public class Prefix {
     public void delete() {
         prefixes.remove(this);
 
-        Profile.profiles.forEach(profile ->  {
+        Profile.getProfiles().forEach(profile ->  {
             if(profile.getPrefixes().contains(prefix)) profile.getPrefixes().remove(prefix);
         });
 

@@ -26,9 +26,7 @@ public class Config {
         config = YamlConfiguration.loadConfiguration(file);
     }
 
-    public String getString(String path) {
-        return CC.translate(config.getString(path));
-    }
+    public String getString(String path) { return config.getString(path); }
     public List<String> getStringList(String path) { return config.getStringList(path); }
     public boolean getBoolean(String path) { return config.getBoolean(path); }
     public Integer getInteger(String path) { return config.getInt(path); }
