@@ -63,10 +63,11 @@ public class GrantMenu extends PaginatedMenu implements Listener {
                         return;
                     }
 
-                    target.getPrefixes().add(prefix);
                     player.sendMessage(CC.translate("&aYou have added " + prefix.getName() + " to " + target.getPlayer().getName()));
-                    System.out.print(""); // just to remove duplicate warnings, you can remove this if you don't mind duplicate warnings.
-                    target.getPlayer().sendMessage(CC.translate("&aYou have received the " + prefix.getName() + " prefix"));
+                    target.getPlayer().sendMessage(CC.translate("&aYou have received the " + prefix.getName() + " prefix, your prefix has automatically been set to it."));
+                    
+                    target.getPrefixes().add(prefix);
+                    target.setCurrentPrefix(prefix);
                     player.closeInventory();
                 }
             });
