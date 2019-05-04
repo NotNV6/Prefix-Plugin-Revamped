@@ -32,8 +32,9 @@ public class PrefixCommand implements CommandExecutor {
         if(!player.hasPermission("prefixes.admin")) new PrefixMenu().openMenu(player); else {
 
             if(args.length < 1) {
-                String[] strings = {"&7&m------------------------------------------",
-                        "&a&lPrefix Help &7&o(<> = required, [] = optional)",
+                String[] strings = {
+                        "&7&m------------------------------------------",
+                        "&6&lPrefix Help",
                         " &e/prefix menu &7(Opens the prefix menu)",
                         " &e/prefix delete &7(Opens the prefix deletion menu)",
                         " &e/prefix grant <player> [prefix] &7(Opens the prefix grant menu)",
@@ -138,8 +139,6 @@ public class PrefixCommand implements CommandExecutor {
 
             }
         }
-
-
         return false;
     }
 }
