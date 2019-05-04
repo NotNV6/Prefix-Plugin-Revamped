@@ -73,11 +73,14 @@ public class PrefixCommand implements CommandExecutor {
                         return true;
                     }
 
-                    Prefix prefix = Prefix.getByName(args[2]);
+                    
 
-                    if(prefix == null) {
+                    if(Prefix.getByName(args[2]) == null) {
                         player.sendMessage(CC.translate("&cThat prefix does not exist."));
+                        return;
                     }
+                    
+                    Prefix prefix = Prefix.getByName(args[2]);
 
                     Profile target = Profile.getProfile(Bukkit.getPlayer(args[1]));
 
