@@ -43,11 +43,7 @@ public class Profile {
 
     public void load() {
         profiles.add(this);
-
-        MongoCollection collection = Database.getProfiles();
-
-        if(collection == null) System.out.println("That collection does not exist!");
-
+        
         Document document = (Document) collection.find(eq("uuid", uuid.toString())).first();
 
         if(document == null) return;
@@ -66,7 +62,7 @@ public class Profile {
 
         if(!prefixes.isEmpty()) {
             List<String> prefixes2 = new ArrayList<>();
-            for(Prefix prefix : prefixes) prefixes2.add(prefix.getName());
+            prefixes.forEach(prefix -> prefixes2.add(prefix.getName()); // not sure wether this works, but it should, not home to test it. (made outside of an IDE)
             document.put("prefixes", prefixes2);
         }
 
