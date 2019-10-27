@@ -1,6 +1,7 @@
 package me.nv6.prefixes.prefix;
 
-import com.mongodb.Block;
+
+import java.util.function.Consumer;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.UpdateOptions;
 import lombok.Getter;
@@ -17,7 +18,8 @@ import static com.mongodb.client.model.Filters.eq;
 @Getter
 public class Prefix {
 
-    @Getter private static List<Prefix> prefixes = new ArrayList<>();
+    @Getter
+    private static List<Prefix> prefixes = new ArrayList<>();
 
     @Setter
     private String name, description, prefix;
@@ -32,16 +34,12 @@ public class Prefix {
 
     public static void loadPrefixes() {
         MongoCollection collection = Database.getPrefixes();
-        collection.find().forEach(new Block() {
-            @Override
-            public void apply(Object object) {
-                Document document = (Document) object;
-                String name = document.getString("name");
-                String description = document.getString("description");
-                String prefix = document.getString("prefix");
-
-                new Prefix(name, description, prefix);
-            }
+        collection.find().forEach((Consumer<? super Document>) document -> {
+              String name = document.getString("name");
+              String description = document.getString("description");
+              String prefix = document.getString("prefix");
+            
+              new Prefix(name, description, prefix);
         });
     }
 
@@ -60,12 +58,11 @@ public class Prefix {
     public void delete() {
         prefixes.remove(this);
 
-        Profile.getProfiles().forEach(profile ->  {
-            if(profile.getPrefixes().contains(prefix)) profile.getPrefixes().remove(prefix);
-        });
+        Profile.getProfiles().stream()
+            .filter(profile -> profile.getPrefixes().contains(prefix))
+            .forEach(profile -> profile.getPrefixes().remove(prefix));
 
-        MongoCollection collection = Database.getPrefixes();
-        Document document = (Document) collection.find(eq("name", name)).first();
+        Document document = (Document) Database.getPrefixes().find(eq("name", name)).first();
 
         if(document == null) return;
         collection.deleteOne(document);
