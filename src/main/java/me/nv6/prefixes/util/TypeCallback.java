@@ -1,8 +1,6 @@
 package me.nv6.prefixes.util;
 
-import java.io.Serializable;
-
-public interface TypeCallback<T> extends Serializable {
+public interface TypeCallback<T> {
 
 	void callback(T data);
 
